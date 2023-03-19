@@ -1,28 +1,4 @@
-<?php
-$ruta = "Img/333278841_482183790636525_645090359507754974_n.jpg";
-$i = imagecreatefromjpeg($ruta);
-$rTotal = 0;
-$vTotal = 0;
-$aTotal = 0;
-$total = 0;
-for ($x=0;$x<imagesx($i);$x++) {
-    for ($y=0;$y<imagesy($i);$y++) {
-        $rgb = imagecolorat($i,$x,$y);
-        $r   = ($rgb >> 16) & 0xFF;
-        $v   = ($rgb >> 8) & 0xFF;
-        $a   = $rgb & 0xFF;
-        $rTotal += $r;
-        $vTotal += $v;
-        $aTotal += $a;
-        $total++;
-    }
-}
-$rPromedio = round($rTotal/$total);
-$vPromedio = round($vTotal/$total);
-$aPromedio = round($aTotal/$total);
-echo "<img src='".$ruta."' width='400' />";
 
-?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -52,11 +28,8 @@ echo "<img src='".$ruta."' width='400' />";
     </div>
 
    </div>
-   <script>
-    var ColorDom="<?php echo "rgb(".$rPromedio.",".$vPromedio.",".$aPromedio.")";?>";
 
-   </script>
-   <script src="index.js">
+
  
    </script>
   
